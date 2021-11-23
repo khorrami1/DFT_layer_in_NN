@@ -11,7 +11,7 @@ from keras.layers import Dense, Activation, Dropout
 
 # a function to see if a Neural Network (NN) can predict it
 def func(x):
-    return 2*np.sin(2*np.pi*x)+3*np.cos(2*np.pi*x) + np.exp(x)
+    return 2*np.sin(2*np.pi*x)+3*np.cos(2*np.pi*x)
 
 # number of samples
 num_samples = 100
@@ -52,11 +52,11 @@ def myNet(num_freq,learning_rate=1e-3):
     return model
 
 
-model = myNet(10)
+model = myNet(2)
 
 #model.compile(optimizer='adam', loss=['mean_absolute_error'])
 
-model.fit(x, y, epochs=500, batch_size=32,verbose=2,validation_split=0.3)
+model.fit(x, y, epochs=1000, batch_size=32,verbose=2,validation_split=0.3)
 
 import matplotlib.pyplot as plt
 
